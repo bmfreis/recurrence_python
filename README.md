@@ -34,9 +34,9 @@ recurrence.py computes:
 *Recurrence Quantification Analysis (RQA)* is a method which quantifies the number and duration of recurrences of a dynamical system presented by its state space trajectory. [2,3,4,5]
 
 recurrence_analysis.py computes:
-* Frequency distribution of diagonal lines P(l)
-* Frequency distribution of vertical lines P(v)
-* Frequency distribution of white vertical lines P(w) 
+* Frequency distribution of diagonal lines (P(l))
+* Frequency distribution of vertical lines (P(v))
+* Frequency distribution of white vertical lines (P(w)) 
 * Recurrence rate (RR)
 * Determinism (DET)
 * Average diagonal line length (L)
