@@ -26,16 +26,15 @@ def distance_matrix(data, dimension, delay, norm):
                 distance_matrix[i,j] = distance_matrix[j,i] = np.max(temp)
     return distance_matrix
 
-def joint_matrix(data1, data2, dimension, delay, threshold, norm):
-    N1 = len(data_1)
-    N2 = len(data_2)
-    assert N1 == N2, "Time series must have the same size"
-    distance_matrix_1 = distance_matrix(data1, dimension, delay, norm)
-    distance_matrix_2 = distance_matrix(data2, dimension, delay, norm)
-    N = len(distance_matrix_1[:,0])
-    for i in range(N):
-        for j in range(i, N, 1):
-            if distance_matrix_1[i,j] <= threshold and distance_matrix_2[i,j] <= threshold:
+def joint_matrix(data1, data2, dimension1, dimension2, delay1, delay2, threshold1, threshold2, norm1, norm2):
+    N1 = int(len(data1) - (dimension1-1) * delay1)
+    N2 = int(len(data2) - (dimension2-1) * delay2)
+    assert N1 == N2, "Space phase must have the same size"
+    distance_matrix_1 = distance_matrix(data1, dimension1, delay1, norm1)
+    distance_matrix_2 = distance_matrix(data2, dimension2, delay2, norm2)
+    for i in range(N1):
+        for j in range(i, N1, 1):
+            if distance_matrix_1[i,j] <= threshold1 and distance_matrix_2[i,j] <= threshold2:
                 distance_matrix_1[i,j] = distance_matrix_1[j,i] = 1
             else:
                 distance_matrix_1[i,j] = distance_matrix_1[j,i] = 0
