@@ -1,7 +1,5 @@
 # recurrence_python
 
-This scientific software written in Python 3 computes Recurrence Plot (RP), Cross Recurrence Plot (CRP), Joint Recurrence Plot (JRP) and Recurrence Quantification Analysis.
-
 ## Cross Recurrence Plot (CRP)
 
 *Cross Recurrence Plot (CRP)* is a graph which shows all those times at which a state in one dynamical system occurs simultaneously in a second dynamical system. With other words, the CRP reveals all the times when the phase space trajectory of the first system visits roughly the same area in the phase space where the phase space trajectory of the second system is. [3]
